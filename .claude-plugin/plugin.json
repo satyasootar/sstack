@@ -1,0 +1,8 @@
+{
+  "name": "sstack",
+  "version": "0.1.0",
+  "description": "Satya's agent skills.",
+  "author": { "name": "Satya Sootar" },
+  "repository": "https://github.com/satyasootar/sstack",
+  "license": "MIT"
+}

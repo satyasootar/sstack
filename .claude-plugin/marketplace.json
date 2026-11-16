@@ -1,0 +1,7 @@
+{
+  "name": "sstack",
+  "owner": { "name": "Satya Sootar" },
+  "plugins": [
+    { "name": "sstack", "source": "./", "description": "Satya's agent skills." }
+  ]
+}
