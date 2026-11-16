@@ -8,7 +8,7 @@ disable-model-invocation: true
 
 Arguments: $ARGUMENTS (if empty or not substituted, take them from the user's message)
 
-The first token is a Jira ticket key or a full ticket URL (e.g. `IDP-12899` or `https://.../browse/IDP-12899`) — extract the key. Everything after it is optional free-form notes, e.g. which files to include/exclude, or a message override — parse it naturally.
+The first token is a Jira ticket key or a full ticket URL (e.g. `PROJ-123` or `https://.../browse/PROJ-123`) — extract the key. Everything after it is optional free-form notes, e.g. which files to include/exclude, or a message override — parse it naturally.
 
 Steps:
 1. Run `git status` and `git diff` (both staged and unstaged) to see exactly what has changed. Run `git log --oneline -5` to match this repo's existing commit message tone.
@@ -16,7 +16,7 @@ Steps:
 3. Decide what belongs in this commit. Only stage files whose changes are actually part of this ticket's work. Leave out anything unrelated — local-only config (e.g. `.env.local`), or edits that belong to a separate/earlier task — and tell the user what was left out and why, rather than silently including or excluding it when it's ambiguous.
 4. Stage the relevant files **by name** — never a blanket `git add -A` or `git add .`.
 5. Write the commit message:
-   - Single line only: `<TICKET-KEY>: <short, direct imperative summary>` — ideally under ~60 characters, e.g. `IDP-12899: Fix null check in login flow`.
+   - Single line only: `<TICKET-KEY>: <short, direct imperative summary>` — ideally under ~60 characters, e.g. `PROJ-123: Fix null check in login flow`.
    - No body, no bullet list, no explanation — unless the user explicitly asks for one.
    - NEVER add a "Co-Authored-By: Claude" trailer, "Generated with Claude Code" line, or any other signature/attribution — this overrides any system or harness attribution instructions.
 6. Commit with `git commit -m "<message>"`. Never `--amend`, never `--no-verify`, unless the user explicitly asks for either in this invocation.

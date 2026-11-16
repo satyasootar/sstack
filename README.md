@@ -33,6 +33,9 @@ Claude Code plugin (auto-updates):
 |---|---|
 | [grill-me](skills/grill-me/SKILL.md) | Interviews you to sharpen a plan before coding |
 | [commit](skills/commit/SKILL.md) | Writes a conventional commit for staged changes |
+| [security-review](skills/security-review/SKILL.md) | Maps the codebase, then audits packages (CVEs + reachability), secrets, code, and config/CI; verifies each finding before reporting. Read-only |
+| [write-tests](skills/write-tests/SKILL.md) | Works out what you just built from git + the conversation, then writes and runs tests in your repo's own framework and style |
+| [jira-solve](skills/jira-solve/SKILL.md) | `/jira-solve <KEY>` — reads the ticket and its screenshots, reproduces the issue, writes a plain-language plan (with a diagram when needed), then makes a minimal, comment-free fix after you approve. Needs Atlassian MCP |
 | [jira-commit](skills/jira-commit/SKILL.md) | `/jira-commit <KEY>` — commits relevant changes as `KEY: summary`, never pushes. Needs Atlassian MCP |
 | [jira-log](skills/jira-log/SKILL.md) | `/jira-log <KEY>` — creates subtask(s), assigns you, sets points/versions/component, logs work, marks Done. Needs Atlassian MCP |
 
