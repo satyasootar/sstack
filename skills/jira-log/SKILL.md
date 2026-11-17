@@ -14,8 +14,8 @@ Everything after the key is free-form text that may override the defaults below 
 
 Defaults (used unless overridden in the arguments):
 - Number of subtasks: 1
-- Story points per subtask: 1
 - Work log per subtask: a realistic, varied duration sized to the actual work done (e.g. `45m`, `1h 15m`, `2h`, `3h 30m`) — never a fixed `30m` every time, and when creating several subtasks give each its own duration
+- Story points per subtask: **derived from that subtask's worklog at 1 story point = 8h**. Convert the resolved worklog to hours and divide by 8 (e.g. `4h` → 0.5, `8h` → 1, `2h` → 0.25, `1h 30m` → 0.1875 ≈ 0.25 — round to the nearest 0.25). Each subtask gets its own value from its own worklog. If the user gives an explicit story-point value, use that instead; if the project has no Story Points field, skip it (see step 4). If the user changes a subtask's worklog, recompute its story points the same way.
 - Assignee: the current authenticated Jira user, always, unless the user explicitly says otherwise
 - Issue type: plain "Sub-task"/"Subtask" (see step 3 — never a specialized variant unless asked)
 - Affects Version / Fix Version: the user's value if given; otherwise copied from the parent ticket; if the parent has none, the latest version in the project (see step 7a). If several candidates exist, always pick the latest (highest version number / most recent release date).
